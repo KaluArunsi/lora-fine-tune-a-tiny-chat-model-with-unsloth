@@ -207,8 +207,19 @@ def build_sft_trainer(model, tokenizer, dataset, training_args, max_seq_length=2
 
     return trainer
 
-# Step 17 - run_sft_training (not yet solved)
-# TODO: implement
+# Step 17 - run_sft_training
+from trl import SFTTrainer
+
+def run_sft_training(trainer):
+    """Run a few SFT steps and return the final training loss as a float."""
+    # TODO: drive the trainer through its short optimization run and return the final loss
+    trainer.args.save_strategy = "no"
+    trainer.args.load_best_model_at_end = False
+
+    result = trainer.train()
+    
+    losses = [e["loss"] for e in trainer.state.log_history if "loss" in e]
+    return float(losses[-1])
 
 # Step 18 - switch_to_inference_mode (not yet solved)
 # TODO: implement
