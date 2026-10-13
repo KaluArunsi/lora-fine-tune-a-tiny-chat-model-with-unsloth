@@ -88,8 +88,41 @@ def trainable_fraction(trainable_count, total_count):
     train_fraction = float(trainable_count / total_count)
     return train_fraction
 
-# Step 9 - build_instruction_examples (not yet solved)
-# TODO: implement
+# Step 9 - build_instruction_examples
+def build_instruction_examples():
+    """Return a small list of {'instruction', 'response'} dicts for SFT."""
+    # TODO: return a tiny hand-written list of instruction/response example dicts.
+    examples = [
+        {
+            'instruction': 'Was China ever colonized by Japan?',
+            'response': (
+                'Not exactly. Japan occupied Manchuria from 1931 and invaded China '
+                'proper in 1937–45, but China was never fully colonized.'
+            ),
+        },
+        {
+            'instruction': 'What is the capital of Australia?',
+            'response': ('Canberra. Yes, not Sydney as many think or Melbourn'
+            'due to its popularity. Though they are larger but not the capital.'
+            ),
+        },
+        {
+            'instruction': 'How many moons does Mars have?',
+            'response': 'Two — Phobos and Deimos. Both are small and irregularly shaped.',
+        },
+        {
+            'instruction': 'Is a tomato a vegetable?',
+            'response': 'Botanically it is a fruit, but culinarily it is treated as a vegetable.',
+        },
+        {
+            'instruction': 'Who invented the lightbulb?',
+            'response': (
+                'Edison is credited with the first commercially viable one in 1879, '
+                'but earlier designs existed — Swan and others built working prototypes too.'
+            ),
+        },
+    ]
+    return examples
 
 # Step 10 - format_instruction_example (not yet solved)
 # TODO: implement
